@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
 		{
 			OnRetryScreen();
 		}
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
 	}
 
 	public void DownHP()
