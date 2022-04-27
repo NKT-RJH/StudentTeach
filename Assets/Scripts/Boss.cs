@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
 
 	public GameObject bullet;
 	GameManager gameManager;
-	public Sprite hitImage;
+	public Sprite normalImage, hitImage;
 
 	void Start()
 	{
@@ -32,10 +32,10 @@ public class Boss : MonoBehaviour
 		{
 			Destroy(collision.gameObject);
 
+			StartCoroutine(OnHitImage());
 			HP -= gameManager.playerDamage;
 			if (HP <= 0)
 			{
-				StartCoroutine(OnHitImage());
 				gameManager.score += gameManager.enemyScore[3];
 				Destroy(gameObject);
 			}
@@ -62,18 +62,18 @@ public class Boss : MonoBehaviour
 			countTime -= patternTime;
 			patternTime = Random.Range(3f, 5f);
 
-			switch (Random.Range(1, 2))
+			switch (Random.Range(1, 2 + 1))
 			{
 				case 1:
-					for (int count = 0; count < 360; count += 10)
+					for (int count = 0; count < 360; count += 15)
 					{
 						Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, count));
 					}
 					break;
 				case 2:
-					int emptySpace = Random.Range(-25, 20 + 1);
+					int emptySpace = Random.Range(160, 190 + 1);
 
-					for (int count = -30; count <= 30; count += 10)
+					for (int count = 130; count <= 230; count += 10)
 					{
 						if (count >= emptySpace && count <= emptySpace + 5)
 						{
@@ -88,10 +88,8 @@ public class Boss : MonoBehaviour
 
 	IEnumerator OnHitImage()
 	{
-		Sprite spriteRenderer = GetComponent<SpriteRenderer>().sprite;
-
 		GetComponent<SpriteRenderer>().sprite = hitImage;
 		yield return new WaitForSeconds(0.1f);
-		GetComponent<SpriteRenderer>().sprite = spriteRenderer;
+		GetComponent<SpriteRenderer>().sprite = normalImage;
 	}
 }

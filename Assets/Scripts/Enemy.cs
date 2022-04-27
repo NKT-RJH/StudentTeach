@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 	[Range(0, 2)] public int enemyNumber;
 	public int HP;
 	GameManager gameManager;
-	public Sprite hitImage;
+	public Sprite normalImage, hitImage;
 
 	void Start()
 	{
@@ -25,10 +25,10 @@ public class Enemy : MonoBehaviour
 		{
 			Destroy(collision.gameObject);
 
+			StartCoroutine(OnHitImage());
 			HP -= gameManager.playerDamage;
 			if (HP <= 0)
 			{
-				StartCoroutine(OnHitImage());
 				gameManager.score += gameManager.enemyScore[enemyNumber];
 				Destroy(gameObject);
 			}
@@ -42,10 +42,8 @@ public class Enemy : MonoBehaviour
 
 	IEnumerator OnHitImage()
 	{
-		Sprite spriteRenderer = GetComponent<SpriteRenderer>().sprite;
-
 		GetComponent<SpriteRenderer>().sprite = hitImage;
 		yield return new WaitForSeconds(0.1f);
-		GetComponent<SpriteRenderer>().sprite = spriteRenderer;
+		GetComponent<SpriteRenderer>().sprite = normalImage;
 	}
 }

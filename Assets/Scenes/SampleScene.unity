@@ -1251,7 +1251,7 @@ MonoBehaviour:
   - {fileID: 26299234324105048, guid: dd1ee8d08c1d8854290471a0f9404e16, type: 3}
   - {fileID: 4709017299793856207, guid: 9f3144e8e552b514fafb4cf5abbe5c5d, type: 3}
   - {fileID: 6596721856676120072, guid: e869e99285060b248b2fc8c6c3f4056c, type: 3}
-  bossSpawnTime: 30
+  bossSpawnTime: 5
 --- !u!4 &1070130779
 Transform:
   m_ObjectHideFlags: 0
@@ -1913,7 +1913,7 @@ MonoBehaviour:
   HP: 0
   score: 0
   playerDamage: 1
-  enemyHP: 14000000320000006400000070170000
+  enemyHP: 140000001e00000028000000d0070000
   enemyScore: 320000004b00000064000000e8030000
   enemySpeed:
   - 2

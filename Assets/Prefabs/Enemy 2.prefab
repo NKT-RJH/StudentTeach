@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyNumber: 1
   HP: 0
+  normalImage: {fileID: -1147401495359466748, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   hitImage: {fileID: -7844560889915226194, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
 --- !u!50 &8463289347342916462
 Rigidbody2D:

@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 0
   bullet: {fileID: 6583826664339746700, guid: f1f20c57be2b9224996e03abcc1edbb0, type: 3}
+  normalImage: {fileID: 2192450021786810173, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
   hitImage: {fileID: -7945901444079236628, guid: 138040323294fd440a3a823e5d70ad01, type: 3}
 --- !u!50 &-273053524130074343
 Rigidbody2D:
